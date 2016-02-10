@@ -33,7 +33,7 @@ module Spree
 
         adjustment = count_on_hand_adjustment
         params[:stock_item].delete(:count_on_hand)
-        adjustment -= @stock_item.count_on_hand if params[:stock_item][:force]
+        adjustment -= @stock_item.count_on_hand if params[:stock_item].delete(:force)
 
         Spree::StockItem.transaction do
           if @stock_item.update_attributes(stock_item_params)
