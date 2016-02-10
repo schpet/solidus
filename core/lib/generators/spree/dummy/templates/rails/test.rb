@@ -31,4 +31,7 @@ Dummy::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Raise when unpermitted parameters are passed to strong params
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
